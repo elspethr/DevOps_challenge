@@ -1,5 +1,6 @@
 import photoapp
 import unittest
+import random
 
 class PhotoappTestCase(unittest.TestCase):
 
@@ -20,8 +21,18 @@ class PhotoappTestCase(unittest.TestCase):
 
     #check that a POST request returns the photo correctly    
     def test_post(self):
-        rv = self.app.post('/', data="window.jpg")
-        assert b'Upload new File' not in rv.data
+        #post the item
+        self.app.post('/', data="window.jpg", follow_redirects=True)
+        #check the response
+        response = self.app.get('/window.jpg')
+        testphotodata = open("window.jpg", "rb").read()
+        #quick check on image size
+        assert(len(testphotodata)==len(response.data))
+        #check every pixel
+        #for i in range(len(testphotodata)):
+        #that's slow so instead just check a random subset of pixels
+        for i in random.sample(xrange(len(testphotodata)), 5000):
+            assert response.data[i] == testphotodata[i]
 
 if __name__ == '__main__':
     unittest.main()
