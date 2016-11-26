@@ -1,7 +1,7 @@
 image: my_drone
 script:
   - python tester.py
-deploy:
-  heroku:
-    app: dvchallenge
+#deploy:
+#  heroku:
+#    app: dvchallenge
 
