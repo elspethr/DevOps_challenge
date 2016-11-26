@@ -1,3 +1,3 @@
-image: drone/drone
+image: drone
 script:
   - python tester.py
