@@ -29,9 +29,9 @@ class PhotoappTestCase(unittest.TestCase):
         #quick check on image size
         assert(len(testphotodata)==len(response.data))
         #check every pixel
-        #for i in range(len(testphotodata)):
+        for i in range(len(testphotodata)):
         #that's slow so for while I'm testing just check a random subset of pixels
-        for i in random.sample(xrange(len(testphotodata)), 5000):
+        #for i in random.sample(xrange(len(testphotodata)), 5000):
             assert response.data[i] == testphotodata[i]
         #should probably find a library that can do this check faster but good enough for now
 
