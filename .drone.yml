@@ -1,4 +1,8 @@
 image: my_drone
 script:
   - python tester.py
-  - git push heroku master
+deploy:
+  heroku:
+    app: dvchallenge.herokuapp.com
+    when:
+      branch: master
