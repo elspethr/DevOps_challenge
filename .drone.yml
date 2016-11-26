@@ -1,8 +1,8 @@
 image: my_drone
 script:
   - python tester.py
-deploy:
-  heroku:
-    app: dvchallenge
-    when:
-      branch: master
+#deploy:
+#  heroku:
+#    app: dvchallenge
+#    when:
+#      branch: master
