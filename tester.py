@@ -1,4 +1,4 @@
-import photoapp
+import app
 import unittest
 import random
 
