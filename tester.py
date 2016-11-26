@@ -5,7 +5,7 @@ import random
 class PhotoappTestCase(unittest.TestCase):
 
     def setUp(self):
-        photoapp.app.config['TESTING'] = True
+        app.app.config['TESTING'] = True
         self.app = photoapp.app.test_client()
 
     def tearDown(self):
@@ -30,9 +30,10 @@ class PhotoappTestCase(unittest.TestCase):
         assert(len(testphotodata)==len(response.data))
         #check every pixel
         #for i in range(len(testphotodata)):
-        #that's slow so instead just check a random subset of pixels
+        #that's slow so for while I'm testing just check a random subset of pixels
         for i in random.sample(xrange(len(testphotodata)), 5000):
             assert response.data[i] == testphotodata[i]
+        #should probably find a library that can do this check faster but good enough for now
 
 if __name__ == '__main__':
     unittest.main()
