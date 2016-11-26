@@ -6,7 +6,7 @@ class PhotoappTestCase(unittest.TestCase):
 
     def setUp(self):
         app.app.config['TESTING'] = True
-        self.app = photoapp.app.test_client()
+        self.app = app.app.test_client()
 
     def tearDown(self):
         pass
