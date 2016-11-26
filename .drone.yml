@@ -1,3 +1,3 @@
 image: ubuntu
 script:
-  - python tester.py
+  - echo hello world
