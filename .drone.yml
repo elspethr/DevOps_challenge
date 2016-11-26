@@ -1,3 +1,4 @@
 image: ubuntu
 script:
+  - apt-get install git
   - python tester.py
