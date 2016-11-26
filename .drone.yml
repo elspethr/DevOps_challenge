@@ -1,4 +1,5 @@
 image: my_drone
 script:
   - pip install os
+  - pip install flask
   - python tester.py
