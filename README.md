@@ -1,5 +1,5 @@
 #Dev Ops Interview Challenge Project
-======
+------
 
 This project contains a simple app "app.py" that allows a user to upload a
 photo and then displays the photo. The file "tester.py" runs a simple
