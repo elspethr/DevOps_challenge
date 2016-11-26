@@ -3,6 +3,6 @@ script:
   - python tester.py
 deploy:
   heroku:
-    app: dvchallenge.herokuapp.com
+    app: dvchallenge
     when:
       branch: master
